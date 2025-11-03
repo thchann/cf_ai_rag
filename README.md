@@ -8,40 +8,14 @@ Minimal RAG application on Cloudflare: Worker (TypeScript) + Workers AI (LLM) + 
 - User input: React chat UI (`frontend/src`)
 - Memory/state: KV (`CONVERSATIONS`) for conversation history
 
-## Run locally
-Prereqs: Node 18+, Cloudflare account, Wrangler CLI
+## Live demo
 
-1) Start the Worker
-```bash
-cd worker
-npm install
-wrangler dev --remote
-```
+- API (Worker): https://rag-worker.tchan-efa.workers.dev
+- Frontend (Pages): https://1815b1a4.rag-llm-aqj.pages.dev
 
-2) Start the frontend (new terminal)
-```bash
-cd ../frontend
-npm install
-# Create .env if missing
-# VITE_WORKER_URL=http://localhost:8787
-npm run dev
-```
+## Data
 
-Open the printed Vite URL and chat.
-
-## Data import (D1)
-To load documents for retrieval (BM25 over D1):
-```bash
-# From repo root
-pip install langchain-text-splitters
-python cloudflare-rag/migrations/process-markdown-to-d1.py
-cd cloudflare-rag/migrations
-npx tsx import-d1.ts
-cd ../worker
-wrangler d1 execute DB --file ../migrations/import-d1.sql --remote
-wrangler d1 execute DB --remote --command "SELECT COUNT(*) AS total FROM documents;"
-```
-Vectorize (semantic search) is optional and can be added later.
+This app returns sources when matching content exists in D1. If you fork this repo, load your documents into D1 using the scripts in `migrations/`.
 
 ## Structure
 ```

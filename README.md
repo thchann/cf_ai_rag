@@ -11,7 +11,7 @@ Minimal RAG application on Cloudflare: Worker (TypeScript) + Workers AI (LLM) + 
 ## Live demo
 
 - API (Worker): https://rag-worker.tchan-efa.workers.dev
-- Frontend (Pages): https://1815b1a4.rag-llm-aqj.pages.dev
+- Frontend (Pages): https://819dfebf.rag-llm-aqj.pages.dev
 
 ## Data
 

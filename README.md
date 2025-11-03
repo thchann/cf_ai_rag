@@ -17,6 +17,16 @@ Minimal RAG application on Cloudflare: Worker (TypeScript) + Workers AI (LLM) + 
 
 This app returns sources when matching content exists in D1. If you fork this repo, load your documents into D1 using the scripts in `migrations/`.
 
+## Minimal commands
+
+```bash
+# Insert a single test document (production D1)
+wrangler d1 execute DB --command "INSERT INTO documents (id, content, source, metadata) VALUES ('test1','Reinforcement learning is a type of machine learning where an agent learns by interacting with an environment and receiving rewards.','test.md','{\"page\":1}');"
+
+# Verify document count
+wrangler d1 execute DB --command "SELECT COUNT(*) AS total FROM documents;"
+```
+
 ## Structure
 ```
 cloudflare-rag/

@@ -1,0 +1,29 @@
+name = "rag-worker"
+main = "src/rag-worker.ts"
+compatibility_date = "2024-11-01"
+
+# Workers AI binding (required for env.AI in dev with remote bindings)
+[ai]
+binding = "AI"
+
+# Vectorize binding
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "rag-embeddings"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "rag-documents"
+database_id = "2a3034b1-4d72-431c-86c9-cfd9e360418c"
+
+# KV Namespace binding
+[[kv_namespaces]]
+binding = "CONVERSATIONS"
+id = "565eb6dce2fa4000a1db19ae20806aa6"
+preview_id = "38b8343a0521495dbed0286a4e003ede"
+
+# Environment variables (if needed)
+[vars]
+# Add any environment variables here
+

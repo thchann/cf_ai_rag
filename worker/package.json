@@ -1,0 +1,20 @@
+{
+  "name": "rag-worker",
+  "version": "1.0.0",
+  "description": "RAG Worker for Cloudflare",
+  "main": "src/rag-worker.ts",
+  "scripts": {
+    "dev": "wrangler dev --remote",
+    "dev:local": "wrangler dev --local",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241101.0",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.78.0"
+  }
+}
+
